@@ -1,6 +1,7 @@
-import { mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext, defineComponent, computed, ref, h, resolveComponent } from 'vue';
-import { l as hasProtocol, j as joinURL, p as parseURL, v as parseQuery, x as withTrailingSlash, y as withoutTrailingSlash } from '../../nitro/node-server.mjs';
-import { _ as _export_sfc, b as useHead, u as useRouter, a as useRuntimeConfig, n as navigateTo } from '../server.mjs';
+import { useSSRContext, mergeProps, withCtx, createTextVNode, toDisplayString, defineComponent, computed, ref, h, resolveComponent } from 'vue';
+import { m as hasProtocol, j as joinURL, p as parseURL, x as parseQuery, y as withTrailingSlash, z as withoutTrailingSlash } from '../../nitro/node-server.mjs';
+import { u as useRouter, a as useRuntimeConfig, n as navigateTo } from '../server.mjs';
+import { _ as _export_sfc, u as useHead } from './_plugin-vue_export-helper-f0df6478.mjs';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 import 'node:http';
 import 'node:https';
@@ -10,6 +11,7 @@ import 'node:fs';
 import 'node:url';
 import 'unhead';
 import '@unhead/shared';
+import '@base-open/connector-api';
 
 const nuxtLinkDefaults = { "componentName": "NuxtLink" };
 const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
@@ -279,4 +281,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-f5c0a1bb"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404-1e0bb596.mjs.map
+//# sourceMappingURL=error-404-5b32a153.mjs.map

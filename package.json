@@ -15,5 +15,8 @@
     "nuxt": "^3.8.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@base-open/connector-api": "https://lf9-static.bytednsdoc.com/obj/eden-cn/jjjpceh7nulojvhj/@base-open-connector-api-0.1.0-alpha.2.tgz"
   }
 }

@@ -10,6 +10,7 @@ import 'node:url';
 import 'unhead';
 import '@unhead/shared';
 import 'vue/server-renderer';
+import '@base-open/connector-api';
 
 const components_islands = {};
 const islandComponents = /* @__PURE__ */ Object.freeze({
@@ -39,4 +40,4 @@ const islandRenderer = defineComponent({
 });
 
 export { islandRenderer as default };
-//# sourceMappingURL=island-renderer-4c185c66.mjs.map
+//# sourceMappingURL=island-renderer-7c5156d4.mjs.map
