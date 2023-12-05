@@ -6,8 +6,7 @@ const state = reactive({
   value: "",
 });
 onMounted(() => {
-  import("./node_modules/@base-open/connector-api").then((res) => {
-    const bitable = res.bitable;
+  if (typeof window !== "undefined") {
     bitable.getConfig().then((config) => {
       console.log("srcTablePath client", config);
       state.value = config.value;
@@ -18,7 +17,7 @@ onMounted(() => {
     bitable.getTenantKey().then((key) => {
       state.tenantKey = key;
     });
-  });
+  }
 });
 const onClick = () => {
   bitable.saveConfigAndGoNext({ key: state.userId });
