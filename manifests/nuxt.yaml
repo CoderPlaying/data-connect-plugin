@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuxt
+  labels:
+    app: nuxt
+    app.kubernetes.io/name: nuxt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nuxt
+  template:
+    metadata:
+      labels:
+        app: nuxt
+    spec:
+      containers:
+        - name: nuxt
+          image: ${IMAGE_NUXT}
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/alicloud-loadbalancer-force-override-listeners: "true"
+    service.beta.kubernetes.io/alicloud-loadbalancer-id: lb-wz9km76tolf3shytq64lu
+  name: nuxt-svc
+  namespace: test
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+  selector:
+    app: nuxt
+  type: LoadBalancer
